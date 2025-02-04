@@ -1,0 +1,34 @@
+# SBT-дериктории сборки
+target/
+project/target/
+project/project/
+
+# IntelliJ IDEA / Metals
+.idea/
+*.iml
+*.iws
+.metals/
+.bloop/
+.bsp/
+.ensime
+.ensime_cache/
+.vscode/
+*.sw?
+
+# MacOS системные файлы
+.DS_Store
+
+# Логи
+*.log
+
+# Другие временные файлы
+.cache/
+*.cache
+*.class
+*.tmp
+*.lock
+*.bak
+
+# Akka persistence snapshots/journal и т.д. (если используешь)
+snapshots/
+journal/
