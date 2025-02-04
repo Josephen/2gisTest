@@ -25,7 +25,7 @@ class CrawlerService(client: HttpClient, config: CrawlerConfig) {
           }
           .handleErrorWith { e =>
             logger.error(e)(s"Error while fetching url=$url") *>
-              IO.pure((url, s"Ошибка при загрузке страницы: ${e.getMessage}"))
+              IO.pure((url, s"Error on page loading: ${e.getMessage}"))
           }
       }
       _ <- logger.info(s"Finished crawl for ${urls.size} URL(s).")
@@ -33,6 +33,6 @@ class CrawlerService(client: HttpClient, config: CrawlerConfig) {
 
   private def extractTitle(html: String): String = {
     val title = Jsoup.parse(html).title().trim
-    if (title.nonEmpty) title else "Отсутствует title"
+    if (title.nonEmpty) title else "No title"
   }
 }
